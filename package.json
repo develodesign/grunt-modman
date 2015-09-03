@@ -1,6 +1,6 @@
 {
   "name": "grunt-modman",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "For use with Magento, this plugin will install modman extensions from a list into a magento installation.",
   "homepage": "https://github.com/develodesign/grunt-modman.git",
   "repository": "https://github.com/develodesign/grunt-modman.git",
