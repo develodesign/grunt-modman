@@ -27,5 +27,8 @@
   },
   "scripts": {
     "test": "grunt test"
+  },
+  "dependencies": {
+    "shelljs": "^0.5.3"
   }
 }

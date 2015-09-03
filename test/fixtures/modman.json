@@ -1,0 +1,8 @@
+[
+  {
+    "command":  "clone",
+    "name":     "Magento Google Trusted Stores",
+    "options":  "",
+    "path":     "https://github.com/develodesign/magento-google-trusted-stores.git"
+  }
+]
