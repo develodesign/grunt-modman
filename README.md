@@ -39,7 +39,7 @@ grunt.initConfig({
 
 Depending on how many extensions you have you might want to keep the plugin data in a json file.
 For example:
-```modman.json```
+`modman.json`
 ```js
 [
   {
@@ -56,8 +56,10 @@ For example:
   }
 ]
 ```
-```Gruntfile.js```
-```
+
+`Gruntfile.js`
+
+```js
 grunt.initConfig({
   modmanPlugins: grunt.file.readJSON( 'modman.json' ),
   modman: {
