@@ -14,7 +14,7 @@ npm install Grunt Modman --save-dev
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('Grunt Modman');
+grunt.loadNpmTasks('grunt-modman');
 ```
 
 ## The "modman" task
