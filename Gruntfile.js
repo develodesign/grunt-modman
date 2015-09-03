@@ -31,10 +31,12 @@ module.exports = function (grunt) {
       tests: ['tmp']
     },
 
+    modmanPlugins: grunt.file.readJSON( 'test/fixtures/modman.json' ),
+
     // Configuration to be run (and then tested).
     modman: {
-      options: {
-
+      install: {
+        plugins: '<%= modmanPlugins %>'
       }
     },
 
