@@ -89,4 +89,4 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 _(Nothing yet)_
 
 ## License
-Copyright (c) 2015 :Paul Bill. Licensed under the MIT license.
+Copyright (c) 2015: Develo // Design. Licensed under the MIT license.
