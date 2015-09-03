@@ -25,68 +25,55 @@ In your project's Gruntfile, add a section named `modman` to the data object pas
 ```js
 grunt.initConfig({
   modman: {
-    options: {
-      // Task-specific options go here.
-    },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
+    install: {
+      plugins: [{
+        name: 'Plugin name',
+        command: 'clone', // checkout|clone|hgclone depending on what version control your plugin uses.
+        path: 'https://path/to/repo',
+        options: '' // Any options to be passed through when cloning a repo. Ie -b 'branch name'
+      }]
+    }
   },
 })
 ```
 
-### Options
-
-#### options.separator
-Type: `String`
-Default value: `',  '`
-
-A string value that is used to do something with whatever.
-
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
-
-A string value that is used to do something else with whatever else.
-
-### Usage Examples
-
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
-
+Depending on how many extensions you have you might want to keep the plugin data in a json file.
+For example:
+```modman.json```
 ```js
+[
+  {
+    "command":  "clone",
+    "name":     "Extension One",
+    "options":  "-b 'branchname'",
+    "path":     "https://path/to/repo"
+  },
+  {
+    "command":  "checkout",
+    "name":     "Extension Two",
+    "options":  "",
+    "path":     "https://path/to/repo"
+  }
+]
+```
+```Gruntfile.js```
+```
 grunt.initConfig({
+  modmanPlugins: grunt.file.readJSON( 'modman.json' ),
   modman: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+    install: {
+      plugins: '<%= modmanPlugins %>'
+    }
   },
 })
 ```
 
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  modman: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-})
-```
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+0.0.1 Initial release.
 
 ## License
 Copyright (c) 2015: Develo // Design. Licensed under the MIT license.
